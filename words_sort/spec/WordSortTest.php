@@ -39,6 +39,32 @@ EOT;
     /**
      * @expectedException InvalidArgumentException 
      */
+    public function testWith0AsNumberOfLinesICantSortWords()
+    {
+        $options = <<<EOT
+0
+This is a sample piece of text to illustrate this problem
+EOT;
+
+        $this->wordSort->sort($options);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException 
+     */
+    public function testWithAnInvalidNumberOfLinesICantSortWords()
+    {
+        $options = <<<EOT
+FourtyTwo
+This is a sample piece of text to illustrate this problem
+EOT;
+
+        $this->wordSort->sort($options);
+    }
+
+    /**
+     * @expectedException InvalidArgumentException 
+     */
     public function testWithInvalidOptionsICantSortWords()
     {
         $this->wordSort->sort('');

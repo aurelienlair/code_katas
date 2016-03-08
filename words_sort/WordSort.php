@@ -13,6 +13,11 @@ class WordSort
 
         $lines = explode(PHP_EOL, $options);
         $numberOfLines = array_shift($lines);
+        if (!is_numeric($numberOfLines) || $numberOfLines < 1) {
+            throw new \InvalidArgumentException(
+                var_export($options, true) . ' are not valid options'
+            );
+        }
 
         $words = $this->sortLexically(
             $this->removeDuplicates(
@@ -30,7 +35,7 @@ class WordSort
 
     private function sortLexically(array $words)
     {
-        usort($words, "strcasecmp");
+        usort($words, 'strcasecmp');
 
         return $words;
     }
