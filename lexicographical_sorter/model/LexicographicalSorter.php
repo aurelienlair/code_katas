@@ -6,30 +6,33 @@ use UI\Items;
 
 class LexicographicalSorter implements Sorter
 {
-    private $output;
-    private $items;
-
     public function sort(Items $items)
     {
-        $this->removeDuplicateWords($items);
-        $this->sortLexically();
-        $this->addNumberOfDistinctWords();
-
-        return $this->output;
+        return $this->addNumberOfDistinctWords(
+            $this->sortLexically(
+                $this->removeDuplicateWords($items)
+            )
+        );
     }
 
     private function removeDuplicateWords(Items $items)
     {
-        $this->output = array_unique(array_map('strtolower', $items->toArray()));
+        return array_unique(
+            array_map('strtolower', $items->toArray())
+        );
     }
 
-    private function sortLexically()
+    private function sortLexically(array $words)
     {
-        usort($this->output, 'strcasecmp');
+        usort($words, 'strcasecmp');
+
+        return $words;
     }
 
-    private function addNumberOfDistinctWords()
+    private function addNumberOfDistinctWords(array $words)
     {
-        array_unshift($this->output, count($this->output));
+        array_unshift($words, count($words));
+
+        return $words;
     }
 }
