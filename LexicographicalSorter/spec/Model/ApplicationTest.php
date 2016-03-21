@@ -1,12 +1,11 @@
 <?php
-require_once __DIR__ . '/../../model/Application.php';
-require_once __DIR__ . '/../../model/Sorter.php';
+use LexicographicalSorter\Model\Application;
 
 class ApplicationTest extends \PHPUnit_Framework_TestCase
 {
     public function testApplicationHappyPath()
     {
-        $sorter = $this->getMock('Sorter\Sorter');
+        $sorter = $this->getMock('LexicographicalSorter\Model\Sorter');
         $sorter->expects($this->once())
             ->method('sort')
             ->willReturn([

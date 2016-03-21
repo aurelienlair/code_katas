@@ -1,8 +1,6 @@
 <?php
-namespace Sorter;
-require_once __DIR__ . '/Sorter.php';
-require_once __DIR__ . '/../ui/Items.php';
-use UI\Items;
+namespace LexicographicalSorter\Model;
+use LexicographicalSorter\UI\Items;
 
 class LexicographicalSorter implements Sorter
 {

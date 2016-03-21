@@ -1,6 +1,5 @@
 <?php
-namespace UI;
-require_once __DIR__ . '/../../ui/Items.php';
+namespace LexicographicalSorter\UI;
 
 class ItemsTest extends \PHPUnit_Framework_TestCase
 {

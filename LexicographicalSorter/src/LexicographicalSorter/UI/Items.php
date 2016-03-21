@@ -1,5 +1,5 @@
 <?php
-namespace UI;
+namespace LexicographicalSorter\UI;
 use InvalidArgumentException;
 
 class Items

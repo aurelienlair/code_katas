@@ -1,8 +1,6 @@
 <?php
-namespace Sorter;
-use UI\Items;
-require_once __DIR__ . '/../../model/LexicographicalSorter.php';
-require_once __DIR__ . '/../../ui/Items.php';
+namespace LexicographicalSorter\Model;
+use LexicographicalSorter\UI\Items;
 
 class LexicographicalSorterTest extends \PHPUnit_Framework_TestCase
 {

@@ -1,5 +1,5 @@
 <?php
-namespace UI;
+namespace LexicographicalSorter\UI;
 
 class ConsoleLine
 {
@@ -8,9 +8,8 @@ class ConsoleLine
         return implode(
             PHP_EOL,
             array_map(
-                function($element)
-                {
-                    return implode(", ", $element); 
+                function($element) {
+                    return implode(', ', $element); 
                 },
                 $output
             )
