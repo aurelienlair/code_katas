@@ -10,3 +10,4 @@ Autoloader::load(__DIR__ . '/FizzBuzz/src')->register();
 Autoloader::load(__DIR__ . '/ChapterIterator/src')->register();
 Autoloader::load(__DIR__ . '/NumbersOfInterest/src')->register();
 Autoloader::load(__DIR__ . '/LexicographicalSorter/src')->register();
+Autoloader::load(__DIR__ . '/Anagram/src')->register();
