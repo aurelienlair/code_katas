@@ -5,11 +5,17 @@ use Anagram\Model\Word;
 
 class AnagramTest extends \PHPUnit_Framework_TestCase
 {
+    private $anagramChecker;
+
+    public function setUp()
+    {
+        $this->anagramChecker = new Checker();
+    }
+
     public function testDogIsAnAnagramOfGod()
     {
-        $anagramChecker = new Checker();
         $this->assertTrue(
-            $anagramChecker->areAnagrams(
+            $this->anagramChecker->areAnagrams(
                 Word::fromString('dog'), 
                 Word::fromString('god')
             )
@@ -18,9 +24,8 @@ class AnagramTest extends \PHPUnit_Framework_TestCase
 
     public function testViewersIsAnAnagramOfReviews()
     {
-        $anagramChecker = new Checker();
         $this->assertTrue(
-            $anagramChecker->areAnagrams(
+            $this->anagramChecker->areAnagrams(
                 Word::fromString('viewers'), 
                 Word::fromString('reviews')
             )
@@ -29,9 +34,8 @@ class AnagramTest extends \PHPUnit_Framework_TestCase
 
     public function testProgrammerIsNotAnAnagramOfGeek()
     {
-        $anagramChecker = new Checker();
         $this->assertFalse(
-            $anagramChecker->areAnagrams(
+            $this->anagramChecker->areAnagrams(
                 Word::fromString('programmer'), 
                 Word::fromString('geek')
             )
