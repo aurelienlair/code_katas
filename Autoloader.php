@@ -32,6 +32,8 @@ class Autoloader
             require_once $path;
             return true;
         }  
+
+        return false;
     }
 
     public function register()
