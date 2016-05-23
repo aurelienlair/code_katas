@@ -41,4 +41,14 @@ class AnagramTest extends \PHPUnit_Framework_TestCase
             )
         );
     }
+
+    public function testQAisNotAnagramOfR()
+    {
+        $this->assertFalse(
+            $this->anagramChecker->areAnagrams(
+                Word::fromString('qa'),
+                Word::fromString('r')
+            )
+        );
+    }
 }
